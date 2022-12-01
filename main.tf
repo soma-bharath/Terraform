@@ -1,10 +1,9 @@
-provider "aws" {
+/*provider "aws" {
   region     = "us-east-1"
   access_key = ""
   secret_key = ""
 }
-
-/*resource "time_sleep" "wait" {
+resource "time_sleep" "wait" {
   create_duration = "300s"
 }*/
 
