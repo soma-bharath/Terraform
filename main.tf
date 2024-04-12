@@ -104,6 +104,8 @@ resource "aws_instance" "my_ec2" {
     private_key = tls_private_key.rsa.private_key_pem
     host        = aws_instance.my_ec2.public_ip
   }
+user_data = filebase64("${path.module}/kubesetup.sh")
+/*
   user_data = <<EOF
 #!/bin/bash
 sudo yum install httpd  php git -y
@@ -111,6 +113,7 @@ sudo echo HI this is soma > /var/www/html/index.html
 sudo systemctl restart httpd
 sudo systemctl enable httpd
 EOF
+*/
 /*  provisioner "remote-exec" {
     inline = [
       "sudo yum install httpd  php git -y",
