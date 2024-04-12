@@ -13,4 +13,6 @@ sudo yum install -y docker
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker pull python
-sudo cp ${path.module}/
+sudo cp ${path.module}/TF.pem ~/.ssh/
+sudo chmod 700 ~/.ssh/TF.pem
+sudo cp ${path.module}/configHost ~/.ssh/
