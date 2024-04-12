@@ -1,0 +1,12 @@
+bastion-host
+HostName <public ip address of bastion machine>
+User ec2-user
+Port 22
+IdentityFile ~/.ssh/Node-key.pem
+IdentitiesOnly yesHost private-ec2
+HostName <private ip address of eks node>
+User ec2-user
+Port 22
+IdentityFile ~/.ssh/Node-key.pem
+IdentitiesOnly yes
+ProxyJump bastion-host
